@@ -1,0 +1,24 @@
+<p>Aquí deberia salir la tabla</p>
+
+<table datatable class="row-border hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th class="text-center"><input type="checkbox" [checked]="isCheckedAll()"></th>  
+        <!-- (change)="checkAll($any($event.target.checked) esto hasta el final de la linea 9-->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of empresas; let i = index">
+        <td>{{i+1}}</td>  
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td class="text-center"><input type="checkbox" [(ngModel)]="item.checked"></td> 
+        <!-- <label><input  class="idEmpresaSeleccionada" type="checkbox" id="{{item.id}}"> {{item.name}}</label>         -->
+      </tr>
+      <button (click)=" ConfirmacionEliminar()">Eliminar</button>
+    </tbody>
+  </table>
+ 

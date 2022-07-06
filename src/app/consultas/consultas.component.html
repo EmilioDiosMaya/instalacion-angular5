@@ -1,0 +1,23 @@
+<h2>Componente de {{nombreDelComponente}}</h2>
+<button (click)="ObtencionEmpresa()">Obtener una sola Empresa</button>
+<p>La empresa encontrada es: {{resultado}}</p>
+
+<button (click)="ObtencionDeTodasLasEmpresas()">Obtener todas las Empresas</button>
+<h2>Listado de Empresas</h2>
+<ul>
+    <li *ngFor="let empresa of empresas">{{empresa.name | json}}</li>
+    <!-- <li *ngFor="let empresa of empresas">{{empresa.name}}</li> -->
+    <!-- <li *ngFor="let empresa of empresas | JsonToArray">{{empresa["name"]}}</li> -->
+</ul>
+
+<h2>Account a eliminar</h2>
+<button (click)="EliminarAccount() ">Eliminar Account</button>
+<p>La cuenta eliminada es: {{mostrarAccount}}</p>
+
+<h2>Crear Empresa</h2>
+Name:<input type="text" [(ngModel)]="tenantName">
+<button (click)="addTenant()">Crear Empresa</button>
+
+<!-- <h2>Crear Empresa</h2>
+<input type="text" #txt_tenantName>
+<button (click)="CreateTennat()">Crear Empresa</button> -->
